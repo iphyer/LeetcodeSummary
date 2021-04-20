@@ -12,7 +12,6 @@ class Solution:
         Iterative
         """
         if not root: return []
-        res = []
         queue = deque([root])
         res_queue = deque([])
         while queue:
