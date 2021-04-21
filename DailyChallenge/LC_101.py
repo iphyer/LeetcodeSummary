@@ -21,7 +21,8 @@ class Solution:
             # both not None
             return node1.val == node2.val and checkMirror(node1.right, node2.left) and checkMirror(node1.left, node2.right)
         
-        return checkMirror(root, root)
+        if not root: return True
+        return checkMirror(root.left, root.right)
         
 
 """
@@ -38,7 +39,8 @@ Iterative
 #         self.right = right
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
-        queue = deque([root, root])
+        if not root: return True
+        queue = deque([root.left, root.right])
         
         while queue:
             node1 = queue.popleft()
